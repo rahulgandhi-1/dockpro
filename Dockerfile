@@ -1,6 +1,6 @@
-FROM  httpd
-WORKDIR /var/www/html/
+FROM  nginx
+WORKDIR /usr/share/nginx/html/
 RUN touch index.html
 RUN echo "this is nginx file" > index.html
 EXPOSE 80
-CMD ["httpd", "-d", "foreground;"]
+CMD ["nginx", "-g", "daemon off;"]
